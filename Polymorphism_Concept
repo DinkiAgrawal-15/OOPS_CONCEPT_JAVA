@@ -1,0 +1,203 @@
+Polymorphism: Polymorphism refers to the ability of OOPs programming languages to differentiate between entities with the same name efficiently. 
+This is done by Java with the help of the signature and declaration of these entities.
+
+// Java program to demonstrate Polymorphism 
+
+
+public class Sum { 
+
+	
+	public int sum(int x, int y) 
+	{ 
+		return (x + y); 
+	} 
+
+	
+	public int sum(int x, int y, int z) 
+	{ 
+		return (x + y + z); 
+	} 
+
+	
+	public double sum(double x, double y) 
+	{ 
+		return (x + y); 
+	} 
+
+	// Driver code 
+	public static void main(String args[]) 
+	{ 
+		Sum s = new Sum(); 
+		System.out.println(s.sum(10, 20)); 
+		System.out.println(s.sum(10, 20, 30)); 
+		System.out.println(s.sum(10.5, 20.5)); 
+	} 
+} 
+
+
+Types of Polymorphism:
+Overloading in Java
+Overriding in Java
+
+Overloading
+Overloading allows different methods to have the same name,
+but different signatures where the signature can differ by the number of input parameters or type of input parameters or both.
+Overloading is related to compile-time (or static) polymorphism.
+// Java program to demonstrate working of method 
+// overloading in Java. 
+
+public class Sum { 
+
+	// Overloaded sum(). This sum takes two int parameters 
+	public int sum(int x, int y) 
+	{ 
+		return (x + y); 
+	} 
+
+	// Overloaded sum(). This sum takes three int parameters 
+	public int sum(int x, int y, int z) 
+	{ 
+		return (x + y + z); 
+	} 
+
+	// Overloaded sum(). This sum takes two double parameters 
+	public double sum(double x, double y) 
+	{ 
+		return (x + y); 
+	} 
+
+	// Driver code 
+	public static void main(String args[]) 
+	{ 
+		Sum s = new Sum(); 
+		System.out.println(s.sum(10, 20)); 
+		System.out.println(s.sum(10, 20, 30)); 
+		System.out.println(s.sum(10.5, 20.5)); 
+	} 
+} 
+
+-----------------------------------------------
+
+Overriding
+
+
+In any object-oriented programming language, 
+Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes 
+or parent classes. When a method in a subclass has the same name, same parameters or signature,
+and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in the super-class.
+Method overriding is one of the way by which java achieve Run Time Polymorphism.The version of a method that is executed
+will be determined by the object that is used to invoke it. If an object of a parent class is used to invoke the method,
+then the version in the parent class will be executed, but if an object of the subclass is used to invoke the method, 
+then the version in the child class will be executed. In other words, it is the type of the object being referred to 
+(not the type of the reference variable) that determines which version of an
+overridden method will be executed.
+
+
+// A Simple Java program to demonstrate 
+// method overriding in java 
+
+// Base Class 
+class Parent { 
+	void show() 
+	{ 
+		System.out.println("Parent's show()"); 
+	} 
+} 
+
+// Inherited class 
+class Child extends Parent { 
+	// This method overrides show() of Parent 
+	@Override
+	void show() 
+	{ 
+		System.out.println("Child's show()"); 
+	} 
+} 
+
+// Driver class 
+class Main { 
+	public static void main(String[] args) 
+	{ 
+		// If a Parent type reference refers 
+		// to a Parent object, then Parent's 
+		// show is called 
+		Parent obj1 = new Parent(); 
+		obj1.show(); 
+
+		// If a Parent type reference refers 
+		// to a Child object Child's show() 
+		// is called. This is called RUN TIME 
+		// POLYMORPHISM. 
+		Parent obj2 = new Child(); 
+		obj2.show(); 
+	} 
+} 
+-----------------------------------------
+RULES FOR METHOD OVERRIDING
+
+Overriding and Access-Modifiers :
+The access modifier for an overriding method can allow more, but not less, 
+access than the overridden method. For example, a protected instance method in the super-class can be made public, 
+but not private, in the subclass. Doing so, will generate compile-time error.
+
+Final methods can not be overridden : 
+If we don’t want a method to be overridden, we declare it as final.
+
+Static methods can not be overridden(Method Overriding vs Method Hiding) :
+When you define a static method with same signature as a static method in base class, it is known as method hiding.
+
+Private methods can not be overridden : Private methods cannot be overridden as they are bonded during compile time. 
+Therefore we can’t even override private methods in a subclass.
+ 
+
+The overriding method must have same return type (or subtype) : From Java 5.0 onwards it is possible to have different return type for 
+a overriding method in child class, but child’s return type should be sub-type of parent’s return type. This phenomena is known as covariant return type.
+ 
+
+Invoking overridden method from sub-class : We can call parent class method in overriding method using super keyword.
+
+Overriding and constructor : We can not override constructor as parent and child class can never have constructor with same name
+(Constructor name must always be same as Class name).
+
+
+Overriding and Exception-Handling : Below are two rules to note when overriding methods related to exception-handling.
+Rule#1 : If the super-class overridden method does not throw an exception, subclass overriding method can only throws the unchecked exception,
+throwing checked exception will lead to compile-time error.
+Rule#2 : If the super-class overridden method does throws an exception, subclass overriding method can only throw same, subclass exception. 
+Throwing parent exception in Exception hierarchy will lead to compile time error.
+Also there is no issue if subclass overridden method is not throwing any exception.
+
+Overriding and abstract method: Abstract methods in an interface or abstract class are meant to be overridden in derived concrete classes otherwise 
+a compile-time error will be thrown.
+ 
+
+Overriding and synchronized/strictfp method : The presence of synchronized/strictfp modifier with method have no effect on the
+rules of overriding, i.e. it’s possible that a synchronized/strictfp method can override a non synchronized/strictfp one and vice-versa.
+
+=====================================================================================
+Overriding vs Overloading :
+
+Overloading is about same method have different signatures. Overriding is about same method, same signature but different classes connected through inheritance.
+
+
+Overloading is an example of compiler-time polymorphism and overriding is an example of run time polymorphism.
+
+
+Dynamic Method Dispatch is one of the most powerful mechanisms that object-oriented design brings to bear on code reuse and robustness.
+The ability to exist code libraries to call methods on instances of new classes without recompiling while maintaining a clean abstract interface is a profoundly powerful tool.
+
+Overridden methods allow us to call methods of any of the derived classes without even knowing the type of derived class object.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
