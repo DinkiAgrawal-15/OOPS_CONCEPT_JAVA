@@ -1,0 +1,61 @@
+Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates.
+Another way to think about encapsulation is, it is a protective shield that prevents the data from being accessed by the code outside this shield. 
+ 
+ 
+  The variables or data of a class is hidden from any other class and can be accessed only through any member function of its own class in which it is declared.
+   **The data in a class is hidden from other classes using the data hiding concept which is achieved by making the members or methods of a class private,
+   and the class is exposed to the end-user or the world without providing any details behind implementation using the abstraction concept, 
+   so it is also known as a combination of data-hiding and abstraction.
+   
+   import java.util.*;
+class Encapsulate {
+
+	private String geekName;
+	private int geekRoll;
+	private int geekAge;
+
+	
+	public int getAge() { return geekAge; }
+
+	
+	public String getName() { return geekName; }
+
+
+	public int getRoll() { return geekRoll; }
+
+	
+	public void setAge(int newAge) { geekAge = newAge; }
+
+	
+	public void setName(String newName)
+	{
+		geekName = newName;
+	}
+
+	public void setRoll(int newRoll) { geekRoll = newRoll; }
+}
+
+public class Main {
+	public static void main(String[] args)
+	{
+		Encapsulate obj = new Encapsulate();
+
+		obj.setName("Harsh");
+		obj.setAge(19);
+		obj.setRoll(51);
+
+		System.out.println("Geek's name: " + obj.getName());
+		System.out.println("Geek's age: " + obj.getAge());
+		System.out.println("Geek's roll: " + obj.getRoll());
+
+		
+	}
+}
+
+
+Advantages of Encapsulation:  
+
+Data Hiding: 
+Increased Flexibility: 
+Reusability: 
+Testing code is easy: 
