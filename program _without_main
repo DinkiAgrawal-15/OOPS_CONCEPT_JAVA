@@ -1,0 +1,6 @@
+class A{  
+  static{  
+  System.out.println("hello");  
+  System.exit(0);  
+  }  
+}  
