@@ -1,0 +1,17 @@
+import java.util.*;
+class Student{  
+void eat(){System.out.println("eating...");}  
+}  
+class girl extends Student{  
+void assgn(){System.out.println("assignment...");}  
+}  
+class Boy extends girl{  
+void tv(){System.out.println("television...");}  
+}  
+class Main{  
+public static void main(String args[]){  
+Boy d=new Boy();  
+d.tv();  
+d.assgn();  
+d.eat();  
+}}  
