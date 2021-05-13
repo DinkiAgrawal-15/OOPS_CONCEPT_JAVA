@@ -1,0 +1,14 @@
+import java.util.*;
+class Student{  
+void eat(){System.out.println("eating...");}  
+}  
+class girl extends Student{  
+void assn(){System.out.println("Assignment");}  
+}  
+class Main{  
+public static void main(String args[]){  
+girl d=new girl();  
+d.eat();  
+d.assn();  
+
+}}  
