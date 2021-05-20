@@ -1,0 +1,9 @@
+class calc{  
+static int add(int a,int b){return a+b;}  
+static int add(int a,int b,int c){return a+b+c;}  
+}  
+class TestOverloading1{  
+public static void main(String[] args){  
+System.out.println(calc.add(41,19));  
+System.out.println(calc.add(11,11,11));  
+}}  
