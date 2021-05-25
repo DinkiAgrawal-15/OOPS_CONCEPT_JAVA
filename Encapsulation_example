@@ -57,3 +57,7 @@ public class TestEncapsulation {
 		// obj.geekName);
 	}
 }
+
+Geek's name: Harsh
+Geek's age: 19
+Geek's roll: 51
