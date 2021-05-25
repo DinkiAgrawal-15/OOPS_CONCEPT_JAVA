@@ -37,6 +37,7 @@ class Encapsulate {
 }
 
 public class TestEncapsulation {
+
 	public static void main(String[] args)
 	{
 		Encapsulate obj = new Encapsulate();
@@ -57,6 +58,8 @@ public class TestEncapsulation {
 		// obj.geekName);
 	}
 }
+output
+---------------------
 
 Geek's name: Harsh
 Geek's age: 19
